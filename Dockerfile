@@ -11,7 +11,7 @@ RUN powershell -Command "& 'C:\Program Files\Microsoft SQL Server\110\Tools\Binn
 COPY MicrosoftAzureStorageEmulator.msi .
 RUN powershell -Command Start-PRocess -FilePath msiexec -ArgumentList /q, /i, MicrosoftAzureStorageEmulator.msi -Wait
 RUN powershell -Command "& 'C:\Program Files (x86)\Microsoft SDKs\Azure\Storage Emulator\AzureStorageEmulator.exe' init /server '(localdb)\azure'"
-EXPOSE 1433 10000 10001 10002
+EXPOSE 10000 10001 10002
 
 # Configure and launch
 COPY start.ps1 .

@@ -12,6 +12,7 @@ A small project to demonstrate running a console app in a Docker container which
 - I was unable to use a "friendly name" for the Azure Storage Emulator container (e.g. `storage`) and use said name from the console application container to communicate with ASE.
     - This may be something environmental with my current setup, as I was attempting to checkout minikube and Kubernetes on Windows, so I may need to reset my Docker engine.
     - Or, this is something with the Windows NAT driver network?
+    - **Don't forget to change the IP address in the connection string in `appsettings.json` to match your ASE container's IP address.**
 
 - I am not using the Microsoft Azure Storage Emulator image available from the Docker Hub/Store. It's a custom image based off of [this writeup](http://agilesnowball.com/azure/docker/2017/05/15/azure-storage-emulator-in-docker.html) with a few modifications to actually make it work correctly.
 - You will need to download the latest `MicrosoftAzureStorageEmulator.msi` installer and the SqlLocalDB 2012 `SqlLocalDB.msi` in order to build the containers.
